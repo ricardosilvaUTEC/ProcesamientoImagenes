@@ -1,5 +1,5 @@
 ## Diagrama UML
 
-![Diagrama UML](docs/uml/diagramaUML.png)
+![Diagrama UML](docs/uml/DiagramaUML.png)
 
 
