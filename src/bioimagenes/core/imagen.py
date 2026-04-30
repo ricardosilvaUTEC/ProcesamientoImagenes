@@ -82,7 +82,7 @@ class Imagen:
         if self.data.ndim == 2:
             return
         
-        # Convertimos a gris promediando los canales RGB
+        #Convertimos a gris promediando los canales RGB
         self.data = np.mean(self.data, axis=2)
 
         #Registramos el cambio en el historial
@@ -105,3 +105,32 @@ class Imagen:
         plt.title("Imagen")
         plt.axis("off")
         plt.show()
+    
+    """
+    Otros metodos:
+    """
+
+    def __str__(self):
+        """
+        Devuelve un resumen técnico de la imagen.
+        """
+        return (
+            f"Imagen: dimensiones={self.data.shape}, "
+            f"brillo={np.mean(self.data):.2f}"
+        )
+
+    def __len__(self):
+        """
+        Retorna la cantidad total de píxeles de la imagen.
+        """
+        return self.data.size
+
+    def __getitem__(self, key):
+        """
+        Permite acceder a los valores de los píxeles mediante índices.
+
+        Ejemplo:
+        --------
+        img[10, 20]
+        """
+        return self.data[key]
