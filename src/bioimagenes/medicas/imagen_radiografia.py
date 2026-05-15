@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 from bioimagenes.core.imagen import Imagen
 from bioimagenes.core.info import Info
 
-
 class ImagenRadiografia(Imagen):
     """
     Clase para el manejo de imágenes radiográficas (RX).

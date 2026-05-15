@@ -1,27 +1,11 @@
-# Python
 __pycache__/
-*.py[cod]
+*.pyc
 *.pyo
 *.pyd
-.pytest_cache/
+
 *.egg-info/
-src/*.egg-info/
-src/bioimagenes.egg-info/
 
-# Entornos virtuales
-.venv/
-venv/
-env/
-ENV/
+.pytest_cache/
 
-# VS Code
-.vscode/
-
-# Archivos temporales
-cd
-python
-prueba_rgb.py
-
-# Sistema
-.DS_Store
-Thumbs.db
+.env
+.venv

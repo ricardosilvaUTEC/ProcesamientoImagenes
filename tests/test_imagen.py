@@ -4,7 +4,6 @@ from bioimagenes.core.imagen import Imagen
 from bioimagenes.core.info import Info
 from bioimagenes.filtros.filtro import Filtro
 
-
 # ─────────────────────────────────────────────
 # Fixtures
 # ─────────────────────────────────────────────
