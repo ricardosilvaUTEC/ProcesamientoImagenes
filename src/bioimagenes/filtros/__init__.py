@@ -1,0 +1,1 @@
+from bioimagenes.filtros.filtro import Filtro
