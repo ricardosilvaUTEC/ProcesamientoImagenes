@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime #Para registrar fecha y hora exacta de la modificación
 
 
 class Historial:
@@ -25,10 +25,10 @@ class Historial:
             las claves 'operacion' y 'fecha'.
             Si no se proporciona, se inicializa vacía.
         """
-        if lista_cambios is not None:
-            if not isinstance(lista_cambios, list):
+        if lista_cambios is not None: #Verificación del parametro
+            if not isinstance(lista_cambios, list): #Validación de tipos
                 raise TypeError("lista_cambios debe ser una lista.")
-            self._lista_cambios = lista_cambios
+            self._lista_cambios = lista_cambios #Guardado interno, el guión bajo para proteger el atributo
         else:
             self._lista_cambios = []
 
@@ -65,21 +65,24 @@ class Historial:
         -------
         None
         """
-        if not isinstance(entrada, str) or not entrada.strip():
+        if not isinstance(entrada, str) or not entrada.strip(): #Verifica que la entrada sea texto y no esté vacía para no guardar datos invalidos
             raise ValueError("La entrada debe ser una cadena de texto no vacía.")
 
         cambio = {
-            "operacion": entrada,
-            "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+            "operacion": entrada, #Se crea un diccionario junto con la operación y fecha en la que fue creada
+            "fecha": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), #Obtiene fecha y hora actual de modificación
         }
-        self._lista_cambios.append(cambio)
+        self._lista_cambios.append(cambio) #Agrega un nuevo registro al final del historial
 
     # ------------------------------------------------------------------
     # Métodos nativos / dunder
     # ------------------------------------------------------------------
 
     def __len__(self) -> int:
-        """Retorna la cantidad total de cambios registrados."""
+        """
+        Retorna la cantidad de cambios almacenados en el historial.
+        Permite usar len(historial).
+        """
         return len(self._lista_cambios)
 
     def __iter__(self):

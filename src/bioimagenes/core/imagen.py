@@ -4,7 +4,8 @@ import matplotlib.pyplot as plt
 from bioimagenes.core.info import Info
 from bioimagenes.core.historial import Historial
 from bioimagenes.filtros.filtro import Filtro
-
+from bioimagenes.visualizacion.visualizar import mostrar_comparacion
+from bioimagenes.visualizacion.histogramas import histograma, histograma_rgb
 
 class Imagen:
     """
@@ -157,6 +158,39 @@ class Imagen:
         plt.axis("off")
         plt.tight_layout()
         plt.show()
+    
+    def comparar(self, otra: "Imagen", titulo_self: str = "Original",
+                 titulo_otra: str = "Procesada") -> None:
+        """
+        Muestra esta imagen y otra lado a lado para comparación.
+
+        Parámetros
+        ----------
+        otra : Imagen
+            Segunda imagen a comparar.
+        titulo_self : str
+            Título de esta imagen (izquierda).
+        titulo_otra : str
+            Título de la otra imagen (derecha).
+        """
+        if not isinstance(otra, Imagen):
+            raise TypeError("otra debe ser una instancia de Imagen.")
+        mostrar_comparacion(self._data, otra._data, titulo_self, titulo_otra)
+
+    def histograma(self, bins: int = 256) -> None:
+        """
+        Muestra el histograma de intensidades de la imagen.
+        Si es RGB muestra los tres canales por separado.
+
+        Parámetros
+        ----------
+        bins : int
+            Cantidad de intervalos del histograma.
+        """
+        if self._data.ndim == 2:
+            histograma(self._data, titulo="Histograma", bins=bins)
+        else:
+            histograma_rgb(self._data, titulo="Histograma RGB", bins=bins)
 
     # ------------------------------------------------------------------
     # Métodos nativos / dunder
