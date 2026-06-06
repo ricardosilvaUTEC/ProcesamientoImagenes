@@ -9,3 +9,6 @@ __pycache__/
 
 .env
 .venvdata/ 
+
+# Datos de prueba
+data/
