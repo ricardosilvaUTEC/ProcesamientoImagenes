@@ -186,9 +186,21 @@ class TestNormalizarRadiografia:
 
 class TestVisualizarCluster:
 
-    def test_stub_lanza_not_implemented(self, rx):
-        with pytest.raises(NotImplementedError):
-            rx.visualizar_cluster()
+    def test_error_lista_vacia(self, rx):
+        with pytest.raises(ValueError):
+            rx.visualizar_cluster(imagenes=[], n_clusters=3)
+
+    def test_error_n_clusters_invalido(self, rx):
+        import numpy as np
+        imagenes = [np.random.randint(0, 255, (64, 64), dtype=np.uint8) for _ in range(5)]
+        with pytest.raises(ValueError):
+            rx.visualizar_cluster(imagenes=imagenes, n_clusters=1)
+
+    def test_error_n_clusters_mayor_que_imagenes(self, rx):
+        import numpy as np
+        imagenes = [np.random.randint(0, 255, (64, 64), dtype=np.uint8) for _ in range(2)]
+        with pytest.raises(ValueError):
+            rx.visualizar_cluster(imagenes=imagenes, n_clusters=5)
 
 
 # ─────────────────────────────────────────────
