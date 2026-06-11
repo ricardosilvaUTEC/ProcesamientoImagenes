@@ -222,6 +222,8 @@ ProcesamientoImagenes/
 │   ├── uml/
 │   │   └── DiagramaUML.png
 │   ├── examples/
+│   │   ├── prueba_datos_reales.py
+│   │   └── prueba_rgb.py
 │   └── api_reference.md
 │
 ├── data/
