@@ -211,6 +211,9 @@ term.visualizar_segmentacion(umbral=35.0)
 ProcesamientoImagenes/
 │
 ├── README.md
+├── bioimg.yml
+├── prueba_rgb.py
+├── prueba_cluster.py
 ├── LICENSE
 ├── .gitignore
 ├── pyproject.toml
