@@ -71,6 +71,7 @@ pip install pytest
 Los archivos de imágenes utilizados para las pruebas y ejemplos no se incluyen en el repositorio debido a su tamaño.
 Los datos pueden descargarse desde el Drive del curso y deben ubicarse respetando la siguiente estructura:
 
+```text
 data/
 ├── tomografia/
 │   └── AC421363f.nii/
@@ -85,18 +86,20 @@ data/
 └── radiografias/
     └── sample/
         └── *.png
-Verificación con datos reales
+```
+
+### Verificación con datos reales
 
 Una vez descargados los datos y configurado el entorno, es posible ejecutar pruebas utilizando imágenes reales:
 
 # Solo termografías (más rápido)
-python prueba_datos_reales.py --modo term
+python docs\examples\prueba_datos_reales.py --modo term
 
 # Solo radiografías
-python prueba_datos_reales.py --modo rx
+python docs\examples\prueba_datos_reales.py --modo rx
 
 # Solo tomografía (mayor consumo de memoria)
-python prueba_datos_reales.py --modo ct
+python docs\examples\prueba_datos_reales.py --modo ct
 
 # Ejecutar todos los casos
 python prueba_datos_reales.py
