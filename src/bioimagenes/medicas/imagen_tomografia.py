@@ -347,6 +347,8 @@ class ImagenTomografia(Imagen):
         plt.tight_layout()
         plt.show()
 
+    mostrar_slice = visualizar_corte
+
     # ------------------------------------------------------------------
     # Métodos privados
     # ------------------------------------------------------------------
