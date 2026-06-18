@@ -104,6 +104,26 @@ class ImagenTomografia(Imagen):
     def en_hu(self) -> bool:
         """Indica si los datos están en unidades Hounsfield."""
         return self._en_hu
+        
+    def bn(self) -> None:
+
+        """
+        Operación no disponible para imágenes tomográficas.
+
+        En la clase base, bn() convierte una imagen RGB a escala de grises.
+        En una tomografía, el array 3D representa un volumen (slices, H, W)
+        y no canales de color, por lo que esta operación no tiene sentido.
+
+        Raises
+        ------
+        NotImplementedError
+        Siempre. Usar normalizar() o ajustar_ventana() en su lugar.
+        """
+        raise NotImplementedError(
+            "bn() no está disponible en ImagenTomografia. "
+            "El array 3D representa un volumen, no canales RGB. "
+            "Usá normalizar() o ajustar_ventana() para manipular intensidades."
+        )
 
     # ------------------------------------------------------------------
     # Métodos públicos

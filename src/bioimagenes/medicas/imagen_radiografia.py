@@ -91,7 +91,7 @@ class ImagenRadiografia(Imagen):
         H, W = self._data.shape
         self._validar_roi(fila_ini, fila_fin, col_ini, col_fin, H, W)
         recorte = self._data[fila_ini:fila_fin, col_ini:col_fin].copy()
-        nueva = ImagenRadiografia(data=recorte.astype(np.uint8), modalidad=self._modalidad)
+        nueva = ImagenRadiografia(data=recorte, modalidad=self._modalidad)
         nueva.info["cortada"] = True
         self._info.historial.modificar_historial(
             f"ROI seleccionada: filas [{fila_ini}:{fila_fin}], cols [{col_ini}:{col_fin}]"
