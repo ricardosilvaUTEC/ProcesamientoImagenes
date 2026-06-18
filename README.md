@@ -210,6 +210,7 @@ term.visualizar_segmentacion(umbral=35.0)
 
 ## Arquitectura
 
+```
 ProcesamientoImagenes/
 │
 ├── README.md
@@ -264,6 +265,7 @@ ProcesamientoImagenes/
     ├── test_radiografia.py
     ├── test_termografica.py
     └── test_tomografia.py
+```
 
 ## Diagrama UML
 
