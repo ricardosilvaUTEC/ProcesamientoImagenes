@@ -210,13 +210,10 @@ term.visualizar_segmentacion(umbral=35.0)
 
 ## Arquitectura
 
-```text
 ProcesamientoImagenes/
 │
 ├── README.md
 ├── bioimg.yml
-├── prueba_rgb.py
-├── prueba_cluster.py
 ├── LICENSE
 ├── .gitignore
 ├── pyproject.toml
@@ -226,13 +223,9 @@ ProcesamientoImagenes/
 │   │   └── DiagramaUML.png
 │   ├── examples/
 │   │   ├── prueba_datos_reales.py
-│   │   └── prueba_rgb.py
+│   │   ├── prueba_rgb.py
+│   │   └── prueba_cluster.py
 │   └── api_reference.md
-│
-├── data/
-│   ├── tomografia/
-│   ├── termografias/
-│   └── radiografias/
 │
 ├── src/
 │   └── bioimagenes/
@@ -271,7 +264,6 @@ ProcesamientoImagenes/
     ├── test_radiografia.py
     ├── test_termografica.py
     └── test_tomografia.py
-```
 
 ## Diagrama UML
 
